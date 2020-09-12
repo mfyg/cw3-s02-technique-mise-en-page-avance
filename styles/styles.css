@@ -4,24 +4,213 @@
 /* font-family: 'Bungee Shade', cursive; */
 
 /* LES VARIABLES CSS ICI */
+:root{
+    --font-primaire: 'Cardo', serif;
+    --font-secondaire: 'Bungee Shade', cursive;
+
+    --couleur-primaire: #a7029a;
+    --couleur-secondaire: darkgray;
+    --couleur-noir: black;
+    --couleur-blanc: white;
+
+    --marge-grand: 0px ;
+    --marge-petit: 0px;
+
+    --gradiant-principal: linear-gradient(36deg, rgba(167,2,154,0.7) 0%, rgba(167,2,154,0) 100%);
+
+}
 
 /*---------------------- Generic ----------------------*/
 
 /* Mettre la ligne universelle pour le box-sizing */
 
+*, *::before, *::after {
+        box-sizing: border-box;
+}
+
+li{
+    list-style:none;
+}
 
 
 /*---------------------- Elements ----------------------*/
+body{
+    margin:0;
+    font-family: var(--font-primaire);
+    font-size: 18px;
+}
 
+a{
+    color: var(--couleur-blanc);
+    text-decoration: none;
+}
 
+a:hover{
+    color: var(--couleur-primaire);
+    text-decoration: underline;
 
+}
+
+h1{
+    font-family: var(--font-secondaire);
+    color: var(--couleur-blanc);
+    margin:0;
+    font-size: 36px;
+}
+
+h2{
+    font-family: var(--font-secondaire);
+    color: var(--couleur-blanc);
+    margin:0;
+    font-size: 80px;
+}
+
+h3{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+
+h4{
+    text-transform: uppercase;
+    color: var(--couleur-noir);
+    font-size: 18px;
+    font-weight: bold;
+}
 
 
 /*---------------------- Components ----------------------*/
 
+.conteneur{
+    margin: 0 auto;
+    max-width: 1440px;
+}
 
+.header-principal{
+    background-color: var(--couleur-noir);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
 
+.header-principal .conteneur{
+    height: 73px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 
+.hero{
+    height: 80vh;
+    background-color: var(--couleur-noir);
+    position: relative;
+}
+.hero video{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+
+    opacity: 0.7;
+
+}
+.hero::after{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+
+    width:100%;
+    height:100%;
+
+}
+.hero .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width:100%;
+    height:100%;
+
+    color: var(--couleur-blanc);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+    background: var(--gradiant-principal);
+}
+
+.content{
+    margin:0;
+    font-size: 24px;
+}
+
+.interet{
+    background-image: url(../images/bg-interet.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    text-align:center;
+    padding-top: 65px;
+    padding-bottom: 80px;
+}
+
+.conteneur .cartes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cartes .carte{
+    background-color: var(--couleur-blanc);
+    box-shadow : 0 0 5px rgba(0,0,0,0.5);
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+
+    width: 352px;
+    height: 367px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.carte img{
+    height: 100%;
+    width: 100%;
+
+}
+
+.citation{
+    height: 404px;
+    display:flex;
+    align-items:center;
+
+    background-image: url("../images/bg-citation.jpg");
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-attachment: fixed;
+    color: var(--couleur-blanc);
+}
+
+.footer-principal{
+    background: var(--couleur-noir);
+    text-align: center;
+    color: var(--couleur-blanc);
+}
+
+.copyright{
+    height: 144px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /*---------------------- Utilities ----------------------*/
